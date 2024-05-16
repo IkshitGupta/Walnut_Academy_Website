@@ -6,7 +6,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, Navigat
 const MyNavigationMenu = () => {
 	return (
 		<NavigationMenu className="max-w-full justify-between">
-			<div className="m-3">
+			<div className="m-2.5 ml-5">
 				<Link href="/" className="flex space-x-2 items-center">
 					<Image src="/images/LOGO.jpg" alt="Website Logo" width={65} height={0} quality={100} priority />
 					<div className="text-right">
