@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import CustomNavbar from './components/navbar';
+import CustomNavbar from './components/navbar_site';
 import './globals.css';
 
 const navLinks = [
@@ -16,7 +16,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en">
 			<body className = "box-border m-0 p-0">
-				<header>Admission Open From Class Play Group to Class Fifth</header>
+				{/* <header>Admission Open From Class Play Group to Class Fifth</header> */}
+				<header>Header</header>
 				{/* <div>
 					{navLinks.map((link) => {
 						const isActive = pathname === link.href;

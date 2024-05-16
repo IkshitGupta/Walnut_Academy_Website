@@ -28,21 +28,23 @@ const MyNavigationMenu = () => {
 				</NavigationMenuItem>
 				<NavigationMenuItem className="relative">
 					<NavigationMenuTrigger>Gallery</NavigationMenuTrigger>
-					<NavigationMenuContent className="flex flex-col items-center bg-slate-700 absolute">
-						<div>
-							<Link href="/gallery/festivals" legacyBehavior passHref>
-								<NavigationMenuLink className="hover:text-teal-400">Festivals</NavigationMenuLink>
-							</Link>
-						</div>
-						<div>
-							<Link href="/gallery/celebrations" legacyBehavior passHref>
-								<NavigationMenuLink className="hover:text-teal-400">Celebrations</NavigationMenuLink>
-							</Link>
-						</div>
-						<div>
-							<Link href="/gallery/competitions" legacyBehavior passHref>
-								<NavigationMenuLink className="hover:text-teal-400">Competitions</NavigationMenuLink>
-							</Link>
+					<NavigationMenuContent className="">
+						<div className="flex flex-col items-center bg-slate-700 ml-9 p-2">
+							<div>
+								<Link href="/gallery/festivals" legacyBehavior passHref>
+									<NavigationMenuLink className="hover:text-teal-400">Festivals</NavigationMenuLink>
+								</Link>
+							</div>
+							<div>
+								<Link href="/gallery/celebrations" legacyBehavior passHref>
+									<NavigationMenuLink className="hover:text-teal-400">Celebrations</NavigationMenuLink>
+								</Link>
+							</div>
+							<div>
+								<Link href="/gallery/competitions" legacyBehavior passHref>
+									<NavigationMenuLink className="hover:text-teal-400">Competitions</NavigationMenuLink>
+								</Link>
+							</div>
 						</div>
 					</NavigationMenuContent>
 				</NavigationMenuItem>
@@ -52,8 +54,8 @@ const MyNavigationMenu = () => {
 					</Link>
 				</NavigationMenuItem>
 			</NavigationMenuList>
-			{/* <NavigationMenuIndicator />
-			<NavigationMenuViewport /> */}
+			<NavigationMenuIndicator />
+			<NavigationMenuViewport />
 		</NavigationMenu>
 	);
 };
