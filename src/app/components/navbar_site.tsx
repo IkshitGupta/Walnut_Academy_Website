@@ -15,42 +15,42 @@ const MyNavigationMenu = () => {
 					</div>
 				</Link>
 			</div>
-			<NavigationMenuList className="text-lg p-3 text-cyan-950">
+			<NavigationMenuList className="text-lg p-3 text-cyan-950 mr-2">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-teal-400">Home</NavigationMenuLink>
+						<NavigationMenuLink className="hover:text-teal-500">HOME</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<Link href="/admission" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-teal-400">Admission</NavigationMenuLink>
+						<NavigationMenuLink className="hover:text-teal-500">ADMISSION</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
-				<NavigationMenuItem className="relative">
-					<NavigationMenuTrigger>Gallery</NavigationMenuTrigger>
-					<NavigationMenuContent className="">
-						<div className="flex flex-col items-center bg-slate-700 ml-9 p-2">
+				<NavigationMenuItem className="relative group/a">
+					<NavigationMenuTrigger>GALLERY</NavigationMenuTrigger>
+					<NavigationMenuList className="group-hover/a:visible invisible absolute">
+						<div className="flex flex-col justify-start items-start mt-2">
 							<div>
 								<Link href="/gallery/festivals" legacyBehavior passHref>
-									<NavigationMenuLink className="hover:text-teal-400">Festivals</NavigationMenuLink>
+									<NavigationMenuLink className="hover:text-teal-500">Festivals</NavigationMenuLink>
 								</Link>
 							</div>
 							<div>
 								<Link href="/gallery/celebrations" legacyBehavior passHref>
-									<NavigationMenuLink className="hover:text-teal-400">Celebrations</NavigationMenuLink>
+									<NavigationMenuLink className="hover:text-teal-500">Celebrations</NavigationMenuLink>
 								</Link>
 							</div>
 							<div>
 								<Link href="/gallery/competitions" legacyBehavior passHref>
-									<NavigationMenuLink className="hover:text-teal-400">Competitions</NavigationMenuLink>
+									<NavigationMenuLink className="hover:text-teal-500">Competitions</NavigationMenuLink>
 								</Link>
 							</div>
 						</div>
-					</NavigationMenuContent>
+					</NavigationMenuList>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<Link href="/contact" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-teal-400">Contact Us</NavigationMenuLink>
+						<NavigationMenuLink className="hover:text-teal-400">CONTACT US</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 			</NavigationMenuList>

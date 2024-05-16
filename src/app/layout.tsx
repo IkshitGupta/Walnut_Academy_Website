@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import CustomNavbar from './components/navbar_site';
+import CustomHeader from './components/header_site';
+import { Separator } from "@/components/ui/separator"
 import './globals.css';
 
 const navLinks = [
@@ -12,12 +13,11 @@ const navLinks = [
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-	// const pathname = usePathname();
 	return (
 		<html lang="en">
 			<body className = "box-border m-0 p-0">
-				{/* <header>Admission Open From Class Play Group to Class Fifth</header> */}
-				<header>Header</header>
+				<CustomHeader/>
+				<Separator/>
 				{/* <div>
 					{navLinks.map((link) => {
 						const isActive = pathname === link.href;
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					})}
 				</div> */}
 				<CustomNavbar/>
+				<Separator/>
 				{children}
 				<footer>Footer</footer>
 			</body>
