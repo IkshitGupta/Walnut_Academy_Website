@@ -1,13 +1,15 @@
-import Link from 'next/link';
+import Image from 'next/image';
+import { Separator } from '@/components/ui/separator';
 export const metadata = {
 	title: 'Walnut Academy',
 };
 export default function Home() {
 	return (
 		<>
-			{/* <Link href="/contact"> Contact Info</Link> */}
-			{/* <CustomNavbar /> */}
-			<h1>Welcome Home</h1>
+			<div className="h-[33rem] relative m-1">
+				<Image src="/images/building.jpg" alt="School Building" layout="fill" priority />
+			</div>
+			<Separator />
 		</>
 	);
 }
