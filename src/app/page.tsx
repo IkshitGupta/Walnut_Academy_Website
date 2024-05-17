@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<>
 			<div className="h-[33rem] relative m-1">
-				<Image src="/images/building.jpg" alt="School Building" layout="fill" priority />
+				<Image src="/images/building.jpg" alt="School Building" fill priority blurDataURL='/images/building-small.jpg' placeholder='blur'/>
 			</div>
 			<Separator />
 		</>

@@ -13,6 +13,9 @@ const config = {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				building: "url('/images/building-small.jpg')",
+			},
 			colors: {
 				hoverLink: '#FFA500',
 				border: 'hsl(var(--border))',
@@ -65,7 +68,7 @@ const config = {
 				},
 				'admission-color': {
 					'0%': { textShadow: '1px 0 2px #ffffff' },
-					'100%': { textShadow: '1px 0 30px #ffcc00'},
+					'100%': { textShadow: '1px 0 30px #ffcc00' },
 				},
 			},
 			animation: {
