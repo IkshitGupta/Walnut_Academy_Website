@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from '@/components/ui/navigation-menu';
 
 const MyNavigationMenu = () => {
+	const hoverBorder = 'hover:border-2 hover:border-hoverLink px-4 py-0';
 	return (
 		<NavigationMenu className="max-w-full justify-between">
 			<div className="m-2.5 ml-5">
@@ -15,21 +16,21 @@ const MyNavigationMenu = () => {
 					</div>
 				</Link>
 			</div>
-			<NavigationMenuList className="text-lg p-3 text-cyan-950 mr-2 font-medium">
+			<NavigationMenuList className="text-lg p-3 text-cyan-950 mr-10 font-medium">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-hoverLink">HOME</NavigationMenuLink>
+						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>HOME</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<Link href="/admission" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-hoverLink">ADMISSION</NavigationMenuLink>
+						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>ADMISSION</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
-				<NavigationMenuItem className="relative group/a">
+				<NavigationMenuItem className={`relative group/a ${hoverBorder}`}>
 					<NavigationMenuTrigger>GALLERY</NavigationMenuTrigger>
 					<NavigationMenuList className="group-hover/a:visible invisible absolute">
-						<div className="flex flex-col justify-start items-start mt-1.5">
+						<div className="flex flex-col justify-start items-start mt-2">
 							<div>
 								<Link href="/gallery/festivals" legacyBehavior passHref>
 									<NavigationMenuLink className="hover:text-hoverLink">Festivals</NavigationMenuLink>
@@ -50,7 +51,7 @@ const MyNavigationMenu = () => {
 				</NavigationMenuItem>
 				<NavigationMenuItem>
 					<Link href="/contact" legacyBehavior passHref>
-						<NavigationMenuLink className="hover:text-hoverLink">CONTACT US</NavigationMenuLink>
+						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>CONTACT US</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 			</NavigationMenuList>
