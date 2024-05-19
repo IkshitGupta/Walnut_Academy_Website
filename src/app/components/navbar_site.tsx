@@ -16,7 +16,7 @@ const MyNavigationMenu = () => {
 					</div>
 				</Link>
 			</div>
-			<NavigationMenuList className="text-lg p-3 text-cyan-950 mr-10 font-medium">
+			<NavigationMenuList className="text-lg p-3 text-headingColor mr-10 font-medium">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>
 						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>HOME</NavigationMenuLink>
