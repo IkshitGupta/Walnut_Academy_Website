@@ -1,6 +1,7 @@
 'use client';
 import CustomNavbar from './components/navbar_site';
 import CustomHeader from './components/header_site';
+import CustomFooter from './components/footer_site';
 import { Separator } from '@/components/ui/separator';
 import './globals.css';
 
@@ -13,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<CustomNavbar />
 				<Separator />
 				{children}
-				<footer>Footer</footer>
+				<CustomFooter />
 			</body>
 		</html>
 	);

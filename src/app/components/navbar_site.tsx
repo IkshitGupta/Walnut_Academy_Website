@@ -9,7 +9,7 @@ const MyNavigationMenu = () => {
 		<NavigationMenu className="max-w-full justify-between">
 			<div className="m-2.5 ml-5">
 				<Link href="/" className="flex space-x-2 items-center">
-					<Image src="/images/LOGO.jpg" alt="Website Logo" width={65} height={0} quality={100} priority />
+					<Image src="/images/LOGO.jpg" alt="Website Logo" width={65} height={0} quality={100} priority className='aspect-square' />
 					<div className="text-right">
 						<div className="text-4xl">Walnut Academy</div>
 						<div>Mansarovar, Jaipur</div>
