@@ -11,7 +11,7 @@ const MyHeader = () => {
 					<Image src="/icons/facebook-white.svg" alt="Walnut Academy Facebook" width={45} height={0} />
 				</Link>
 				<Link href="https://www.youtube.com/@walnutacademy2017" rel="noopener noreferrer" target="_blank">
-					<Image src="/icons/youtube-white.svg" alt="Walnut Academy YouTube" width={45} height={10} />
+					<Image src="/icons/youtube-white.svg" alt="Walnut Academy YouTube" width={45} height={0} />
 				</Link>
 			</div>
 		</div>

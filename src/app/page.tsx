@@ -7,7 +7,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 export const metadata = {
 	title: 'Walnut Academy',
 };
-export default function Home() {
+export default function Home() {	
 	return (
 		<>
 			<AspectRatio ratio={11 / 5}>
