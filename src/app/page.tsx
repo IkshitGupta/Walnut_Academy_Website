@@ -13,16 +13,16 @@ export default function Home() {
 			<AspectRatio ratio={11 / 5}>
 				<Image src="/images/building.jpg" alt="School Building" priority blurDataURL="/images/building-small.jpg" placeholder="blur" fill />
 			</AspectRatio>
-			<Separator />
+			{/* <Separator /> */}
 
 			<CustomWelcome />
-			<Separator />
+			{/* <Separator /> */}
 
 			<Team />
-			<Separator />
+			{/* <Separator /> */}
 
 			<RoomGallery />
-			<Separator />
+			{/* <Separator /> */}
 		</>
 	);
 }

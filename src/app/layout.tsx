@@ -10,9 +10,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<body className="box-border m-0 p-0">
 				<CustomHeader />
-				<Separator />
+				{/* <Separator /> */}
 				<CustomNavbar />
-				<Separator />
+				{/* <Separator /> */}
 				{children}
 				<CustomFooter />
 			</body>
