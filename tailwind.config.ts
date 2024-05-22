@@ -18,7 +18,8 @@ const config = {
 			},
 			colors: {
 				hoverLink: '#FFA500',
-				headingColor: '#001879',
+				navColor: '#001879',
+				headingColor: '#2C3E50',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

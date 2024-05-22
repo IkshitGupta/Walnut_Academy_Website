@@ -4,7 +4,7 @@ import Image from 'next/image';
 const MyFooter = () => {
 	return (
 		<>
-			<div className="bg-blue-900 mt-10 text-white py-10 flex justify-between px-28">
+			<div className="bg-blue-900 mt-10 text-white py-5 flex justify-between px-28">
 				<div className="flex-col flex justify-center items-center">
 					<div className="m-2.5 ml-5">
 						<Link href="/" className="flex space-x-2 items-center">
@@ -15,17 +15,17 @@ const MyFooter = () => {
 						</Link>
 					</div>
 
-					<div className="text-lg">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
+					<div className="text-xl text-center">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
 				</div>
 
 				<div className="flex flex-col justify-center">
 					<div className="text-xl pb-3 text-[#ffa500] font-semibold">GET IN TOUCH</div>
 					<div className="flex gap-x-1 items-center text-lg">
-						<Image src="/icons/phone.png" alt="Phone Icon" width={25} height={0} />
+						<Image src="/icons/phone-white.png" alt="Phone Icon" width={25} height={0} />
 						<div>+91 9694853435</div>
 					</div>
 					<div className="flex gap-x-2 items-center text-lg">
-						<Image src="/icons/mail.png" alt="Phone Icon" width={20} height={0} />
+						<Image src="/icons/mail-white.png" alt="Phone Icon" width={20} height={0} />
 						<div>walnutacademy2017@gmail.com</div>
 					</div>
 					<Link href="/contact" className="text-lg mt-3 text-[#ffa500] font-bold">
