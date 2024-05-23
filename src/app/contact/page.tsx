@@ -11,19 +11,19 @@ export default function Contact() {
 					<div className="text-headingColor font-bold text-4xl">Contact Us</div>
 
 					<div className="flex gap-4 mt-5">
-						<Image src="/icons/address.png" alt="Address Icon" width={25} height={0} />
+						<Image src="/icons/location.svg" alt="Address Icon" width={25} height={0} />
 						<div className="text-xl">Address</div>
 					</div>
 					<div className="text-lg">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
 
 					<div className="flex gap-4 mt-5">
-						<Image src="/icons/phone.png" alt="Phone Icon" width={25} height={0} />
+						<Image src="/icons/phone.svg" alt="Phone Icon" width={25} height={0} />
 						<div className="text-xl">Contact No.</div>
 					</div>
 					<div className="text-lg">+91 9694853435</div>
 
 					<div className="flex gap-4 mt-5">
-						<Image src="/icons/mail.png" alt="Phone Icon" width={25} height={0} />
+						<Image src="/icons/mail.svg" alt="Mail Icon" width={25} height={0} />
 						<div className="text-xl">Mail</div>
 					</div>
 					<div className="text-lg">walnutacademy2017@gmail.com</div>

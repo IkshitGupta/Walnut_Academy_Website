@@ -18,26 +18,26 @@ const MyFooter = () => {
 					<div className="text-xl text-center">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
 				</div>
 
-				<div className="flex flex-col justify-center">
+				<div>
 					<div className="text-xl pb-3 text-[#ffa500] font-semibold">GET IN TOUCH</div>
 					<div className="flex gap-x-1 items-center text-lg">
-						<Image src="/icons/phone-white.png" alt="Phone Icon" width={25} height={0} />
+						<Image src="/icons/phone-white.svg" alt="Phone Icon" width={25} height={0} />
 						<div>+91 9694853435</div>
 					</div>
-					<div className="flex gap-x-2 items-center text-lg">
-						<Image src="/icons/mail-white.png" alt="Phone Icon" width={20} height={0} />
+					<div className="flex gap-x-2 items-center text-lg mb-3">
+						<Image src="/icons/mail-white.svg" alt="Mail Icon" width={25} height={0} />
 						<div>walnutacademy2017@gmail.com</div>
 					</div>
-					<Link href="/contact" className="text-lg mt-3 text-[#ffa500] font-bold">
+					<Link href="/contact" className="text-lg text-[#ffa500] font-bold">
 						CONTACT US
 					</Link>
 					<div className="text-xl pb-3 mt-3 text-[#ffa500] font-semibold">STAY CONNECTED</div>
 					<div className="flex space-x-2">
 						<Link href="https://www.facebook.com/profile.php?id=100057252888320" rel="noopener noreferrer" target="_blank">
-							<Image src="/icons/facebook-white.svg" alt="Walnut Academy Facebook" width={35} height={0} />
+							<Image src="/icons/facebook.svg" alt="Walnut Academy Facebook" width={35} height={0} />
 						</Link>
 						<Link href="https://www.youtube.com/@walnutacademy2017" rel="noopener noreferrer" target="_blank">
-							<Image src="/icons/youtube-white.svg" alt="Walnut Academy YouTube" width={35} height={0} />
+							<Image src="/icons/youtube.svg" alt="Walnut Academy YouTube" width={35} height={0} />
 						</Link>
 					</div>
 				</div>
