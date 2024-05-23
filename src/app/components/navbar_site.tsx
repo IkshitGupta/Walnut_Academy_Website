@@ -2,36 +2,24 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport } from '@/components/ui/navigation-menu';
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
+import MobileNavbar from './navbar_mobile';
 
 const MyNavigationMenu = () => {
 	const hoverBorder = 'hover:border-2 hover:border-hoverLink px-4 py-0';
 	return (
 		<NavigationMenu className="max-w-full justify-between">
+			<MobileNavbar />
+			
 			<div className="m-2.5 ml-5">
 				<Link href="/" className="flex space-x-2 items-center">
 					<Image src="/images/LOGO.jpg" alt="Website Logo" width={65} height={0} quality={100} priority className="aspect-square" />
 					<div className="text-right">
-						<div className="text-4xl">Walnut Academy</div>
-						<div className="text-lg">Mansarovar, Jaipur</div>
+						<div className="text-4xl max-md:text-2xl max-md:font-semibold">Walnut Academy</div>
+						<div className="md:text-lg">Mansarovar, Jaipur</div>
 					</div>
 				</Link>
 			</div>
-			<div className="md:hidden">
-				<Drawer>
-					<DrawerTrigger>
-						<Image src="/icons/menu.svg" alt="Menu Icon" width={45} height={0} />
-					</DrawerTrigger>
-					<DrawerContent>
-						<DrawerHeader>
-							<DrawerTitle>Hello</DrawerTitle>
-						</DrawerHeader>
-						{/* <DrawerClose>
-							<Image src="/icons/menu.svg" alt="Menu Icon" width={45} height={0} />
-						</DrawerClose> */}
-					</DrawerContent>
-				</Drawer>
-			</div>
+
 			<NavigationMenuList className="text-lg p-3 text-navColor mr-10 font-medium max-md:hidden">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref>

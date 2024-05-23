@@ -15,7 +15,7 @@ const WelcomeDesc = () => {
 					<CardContent>C1</CardContent>
 				</Card>
 
-				<Separator orientation="vertical" />
+				<Separator orientation="vertical" className='bg-red-500 w-0.5 h-auto' />
 
 				{/* Timings Section */}
 				<Card className="w-2/6 text-center border-blue-900 border-4 bg-[#FADFB3]">
@@ -23,11 +23,11 @@ const WelcomeDesc = () => {
 						<CardTitle className="text-3xl">Timings</CardTitle>
 					</CardHeader>
 					<CardContent className="flex justify-between">
-						<div className="w-1/2 border-blue-900 border-r-2">
+						<div className="w-1/2">
 							<div className="font-semibold text-xl font-mono">Office Hours</div>
 							<div className="text-lg">8:30 a.m. to 02:30 p.m.</div>
 						</div>
-						<Separator orientation="vertical" />
+						<Separator orientation="vertical" className="bg-blue-900 w-0.5 h-auto" />
 						<div className="w-1/2">
 							<div className="font-semibold text-xl font-mono">Class Hours</div>
 							<div className="text-lg">8:30 a.m. to 01:30 p.m.</div>
