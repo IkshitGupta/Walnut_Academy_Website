@@ -22,19 +22,28 @@ const MyMobileNavbar = () => {
 		setIsCollapsibleOpen(!isCollapsibleOpen);
 	};
 
+	const handleLinkClick = () => {
+		setIsDropdownOpen(false);
+		setIsCollapsibleOpen(false);
+	};
+
 	return (
-		<div className="">
+		<div className="md:hidden">
 			<DropdownMenu open={isDropdownOpen} onOpenChange={handleDropdownChange}>
 				<DropdownMenuTrigger>
 					<Image src="/icons/menu.svg" alt="Menu Icon" width={45} height={0} />
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className="text-lg py-3 text-navColor font-medium">
 					<DropdownMenuItem>
-						<Link href="/">HOME</Link>
+						<Link href="/" onClick={handleLinkClick}>
+							HOME
+						</Link>
 					</DropdownMenuItem>
 
 					<DropdownMenuItem>
-						<Link href="/admission">ADMISSION</Link>
+						<Link href="/admission" onClick={handleLinkClick}>
+							ADMISSION
+						</Link>
 					</DropdownMenuItem>
 
 					{/* Gallery */}
@@ -45,18 +54,26 @@ const MyMobileNavbar = () => {
 								<Image src="/icons/down-arrow.svg" alt="Down Icon" width={25} height={0} />
 							</CollapsibleTrigger>
 							<CollapsibleContent className="flex flex-col text-[#333333]">
-								<Link href="/gallery/festivals">Festivals</Link>
-								<Separator className='bg-navColor'/>
-								<Link href="/gallery/celebrations">Celebrations</Link>
-								<Separator className='bg-navColor'/>
-								<Link href="/gallery/competitions">Competitions</Link>
-								<Separator className='bg-navColor'/>
+								<Link href="/gallery/festivals" onClick={handleLinkClick}>
+									Festivals
+								</Link>
+								<Separator className="bg-navColor" />
+								<Link href="/gallery/celebrations" onClick={handleLinkClick}>
+									Celebrations
+								</Link>
+								<Separator className="bg-navColor" />
+								<Link href="/gallery/competitions" onClick={handleLinkClick}>
+									Competitions
+								</Link>
+								<Separator className="bg-navColor" />
 							</CollapsibleContent>
 						</Collapsible>
 					</DropdownMenuItem>
 
 					<DropdownMenuItem>
-						<Link href="/contact">CONTACT US</Link>
+						<Link href="/contact" onClick={handleLinkClick}>
+							CONTACT US
+						</Link>
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
