@@ -5,7 +5,7 @@ import { Separator } from '@/components/ui/separator';
 const WelcomeDesc = () => {
 	return (
 		<>
-			<div className="flex md:mt-10 justify-center gap-x-16 gap-y-4 flex-wrap max-md:mt-5">
+			<div className="flex mt-10 justify-center gap-x-16 gap-y-4 flex-wrap max-md:mt-5">
 				{/* About Section */}
 				<Card className="md:w-3/6 border-blue-900 border-4 bg-[#FADFB3] max-md:mx-5">
 					<CardHeader>

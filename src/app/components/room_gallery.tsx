@@ -6,11 +6,11 @@ const RoomGallery = () => {
 	const images = [1, 2, 3, 4].map((num) => `/images/room/${num}.jpg`);
 	return (
 		<>
-			<div className="text-center text-4xl mt-10 font-bold text-headingColor"> Photo Gallery </div>
+			<div className="text-center text-4xl mt-10 font-bold text-headingColor max-md:mt-5 max-md:text-3xl"> Photo Gallery </div>
 
-			<div className="mt-5 w-4/5 mx-auto">
+			<div className="mt-5 w-4/5 mx-auto max-md:w-4/6">
 				<Carousel
-					className="ml-10"
+					className="md:ml-10"
 					opts={{
 						align: 'start',
 						loop: true,
@@ -18,7 +18,7 @@ const RoomGallery = () => {
 				>
 					<CarouselContent className="-ml-10">
 						{images.map((src, index) => (
-							<CarouselItem className="basis-1/3 pl-10" key={index + 1}>
+							<CarouselItem className="basis-1/3 pl-10 max-md:basis-1/2" key={index + 1}>
 								<AspectRatio ratio={1 / 1} className="border-blue-900 border-4">
 									<Image src={src} alt={`Room ${index + 1}`} blurDataURL="/images/building-small.jpg" placeholder="blur" fill />
 								</AspectRatio>
