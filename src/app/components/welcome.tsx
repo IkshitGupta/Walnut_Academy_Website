@@ -12,7 +12,13 @@ const WelcomeDesc = () => {
 						<CardTitle className="md:text-4xl">Welcome to Walnut Academy</CardTitle>
 						<CardDescription>Motto</CardDescription>
 					</CardHeader>
-					<CardContent>C1</CardContent>
+					<CardContent>
+						<div className="text-justify">
+							Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we will nurture your child and provide them with a quality
+							education. At Walnut Academy, our firm belief about teaching is "learning by playing, doing, and in an interactive way." Hence, we have designed our ambiance,
+							curriculum, activities, teaching aids, toys, and equipment in a fun-loving manner.
+						</div>
+					</CardContent>
 				</Card>
 
 				<Separator orientation="vertical" className="bg-red-500 w-0.5 h-auto max-md:hidden" />
@@ -24,12 +30,12 @@ const WelcomeDesc = () => {
 					</CardHeader>
 					<CardContent className="flex justify-between">
 						<div className="w-1/2">
-							<div className="font-semibold text-xl font-mono max-md:text-lg"> Office Hours </div>
+							<div className="font-semibold text-xl max-md:text-lg"> Office Hours </div>
 							<div className="md:text-lg">8:30 a.m. to 02:30 p.m.</div>
 						</div>
 						<Separator orientation="vertical" className="bg-blue-900 w-0.5 h-auto mx-2" />
 						<div className="w-1/2">
-							<div className="font-semibold text-xl font-mono max-md:text-lg"> Class Hours </div>
+							<div className="font-semibold text-xl max-md:text-lg"> Class Hours </div>
 							<div className="md:text-lg">8:30 a.m. to 01:30 p.m.</div>
 						</div>
 					</CardContent>
