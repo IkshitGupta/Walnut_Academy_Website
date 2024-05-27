@@ -13,7 +13,10 @@ const WelcomeDesc = () => {
 						<CardDescription> Enter the world of learning with fun and joy. </CardDescription>
 					</CardHeader>
 					<CardContent className="text-justify">
-						Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we will nurture your child and provide them with a quality education. At Walnut Academy, our firm belief about teaching is "learning by playing, doing, and in an interactive way." Hence, we have designed our ambiance, curriculum, activities, teaching aids, toys, and equipment in a fun-loving manner.
+						{' '}
+						Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we will nurture your child and provide them with a quality education. At Walnut
+						Academy, our firm belief about teaching is "learning by playing, doing, and in an interactive way." Hence, we have designed our ambiance, curriculum, activities, teaching aids,
+						toys, and equipment in a fun-loving manner.
 					</CardContent>
 				</Card>
 
