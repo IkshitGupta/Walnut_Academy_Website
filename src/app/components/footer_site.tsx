@@ -4,7 +4,7 @@ import Image from 'next/image';
 const MyFooter = () => {
 	return (
 		<>
-			<div className="bg-blue-900 mt-10 text-white md:py-5 flex justify-between px-28 max-md:mt-5 flex-wrap max-md:px-10 gap-y-2">
+			<div className="bg-blue-900 mt-10 text-white md:py-5 flex px-28 max-md:mt-5 flex-wrap max-md:px-10 gap-y-2 items-center justify-center gap-x-16">
 				<div className="flex-col flex justify-center items-center">
 					<div className="m-2.5 ml-5">
 						<Link href="/" className="flex gap-x-2 items-center max-md:gap-x-0.5">

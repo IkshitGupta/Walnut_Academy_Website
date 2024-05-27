@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import { Separator } from '@/components/ui/separator';
 export const metadata = {
 	title: 'Contact Us',
 };
 export default function Contact() {
 	return (
 		<>
+			<Separator className="h-0.5 bg-black" />
 			<div className="flex ml-10 mt-10 items-center mx-auto gap-x-10 flex-wrap gap-y-5">
 				<div>
 					<div className="text-headingColor font-bold text-4xl max-md:text-2xl"> Contact Us </div>

@@ -33,8 +33,8 @@ const MyNavigationMenu = () => {
 				</NavigationMenuItem>
 				<NavigationMenuItem className={`relative group/a ${hoverBorder}`}>
 					<NavigationMenuTrigger>GALLERY</NavigationMenuTrigger>
-					<NavigationMenuList className="group-hover/a:visible invisible absolute">
-						<div className="flex flex-col justify-start items-start mt-2">
+					<NavigationMenuList className="group-hover/a:visible invisible absolute -left-5">
+						<div className="flex flex-col justify-start items-start mt-2 bg-[#FFFDD0]/80 pl-4 pr-2">
 							<div>
 								<Link href="/gallery/festivals" legacyBehavior passHref>
 									<NavigationMenuLink className="hover:text-hoverLink">Festivals</NavigationMenuLink>
