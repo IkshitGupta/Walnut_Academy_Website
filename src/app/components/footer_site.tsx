@@ -16,7 +16,7 @@ const MyFooter = () => {
 						</Link>
 					</div>
 
-					<div className="md:text-xl text-center max-md:text-sm">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
+					<div className="md:text-xl text-center max-md:text-sm">175, Prajapati Vihar, Patrakar Colony Road, Mansarovar, Jaipur, Rajasthan-302020</div>
 				</div>
 
 				<div className="max-md:text-center">
@@ -31,9 +31,9 @@ const MyFooter = () => {
 						<Image src="/icons/mail-white.svg" alt="Mail Icon" width={20} height={0} className="md:hidden" />
 						<div>walnutacademy2017@gmail.com</div>
 					</div>
-					<Link href="/contact" className="md:text-lg text-[#ffa500] font-bold">
+					{/* <Link href="/contact" className="md:text-lg text-[#ffa500] font-bold">
 						CONTACT US
-					</Link>
+					</Link> */}
 					<div className="md:text-xl pb-3 max-md:pb-0.5 mt-3 max-md:mt-0.5 text-[#ffa500] font-semibold">STAY CONNECTED</div>
 					<div className="flex space-x-2 max-md:justify-center">
 						<Link href="https://www.facebook.com/profile.php?id=100057252888320" rel="noopener noreferrer" target="_blank">

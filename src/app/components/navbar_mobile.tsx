@@ -41,11 +41,11 @@ const MyMobileNavbar = () => {
 					</DropdownMenuItem>
 					<Separator className="h-1" />
 
-					<DropdownMenuItem className="text-xl">
+					{/* <DropdownMenuItem className="text-xl">
 						<Link href="/admission" onClick={handleLinkClick}>
 							ADMISSION
 						</Link>
-					</DropdownMenuItem>
+					</DropdownMenuItem> */}
 					<Separator className="h-1" />
 
 					{/* Gallery */}

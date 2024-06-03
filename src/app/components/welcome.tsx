@@ -8,12 +8,12 @@ const WelcomeDesc = () => {
 			<div className="flex mt-10 justify-center gap-x-16 gap-y-4 flex-wrap max-md:mt-5">
 				{/* About Section */}
 				<Card className="md:w-3/6 border-blue-900 border-4 bg-[#FADFB3] max-md:mx-5">
-					<CardHeader>
-						<CardTitle className="md:text-4xl">Welcome to Walnut Academy</CardTitle>
-						<CardDescription>Motto</CardDescription>
+					<CardHeader className="pb-4">
+						<CardTitle className="text-4xl max-md:text-xl">Welcome to Walnut Academy</CardTitle>
+						<CardDescription className="md:text-lg/4 text-black">A Foundation For The Future</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<div className="text-justify">
+						<div className="text-justify font-medium max-md:text-sm">
 							Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we will nurture your child and provide them with a quality
 							education. At Walnut Academy, our firm belief about teaching is learning by playing, doing, and in an interactive way. Hence, we have designed our ambiance,
 							curriculum, activities, teaching aids, toys, and equipment in a fun-loving manner.
@@ -21,7 +21,7 @@ const WelcomeDesc = () => {
 					</CardContent>
 				</Card>
 
-				<Separator orientation="vertical" className="bg-red-500 w-0.5 h-auto max-md:hidden" />
+				{/* <Separator orientation="vertical" className="bg-red-500 w-0.5 h-auto max-md:hidden" /> */}
 
 				{/* Timings Section */}
 				<Card className="md:w-2/6 text-center border-blue-900 border-4 bg-[#FADFB3] max-md:mx-5">
@@ -39,7 +39,7 @@ const WelcomeDesc = () => {
 							<div className="md:text-lg">8:30 a.m. to 01:30 p.m.</div>
 						</div>
 					</CardContent>
-					<CardFooter className="justify-center flex font-semibold md:text-lg">Note: Every second Saturday is a holiday for the school.</CardFooter>
+					<CardFooter className="justify-center flex font-semibold md:text-lg">Note: Every second Saturday is a holiday for the students.</CardFooter>
 				</Card>
 			</div>
 		</>
