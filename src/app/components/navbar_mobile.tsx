@@ -31,10 +31,10 @@ const MyMobileNavbar = () => {
 		<div className="md:hidden">
 			<DropdownMenu open={isDropdownOpen} onOpenChange={handleDropdownChange}>
 				<DropdownMenuTrigger>
-					<Image src="/icons/menu.svg" alt="Menu Icon" width={45} height={0} />
+					<Image src="/icons/menu.svg" alt="Menu Icon" width={35} height={0} />
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className="py-3 text-navColor font-medium opacity-90">
-					<DropdownMenuItem className="text-xl">
+					<DropdownMenuItem className="text-lg">
 						<Link href="/" onClick={handleLinkClick}>
 							HOME
 						</Link>
@@ -49,7 +49,7 @@ const MyMobileNavbar = () => {
 					<Separator className="h-1" /> */}
 
 					{/* Gallery */}
-					<DropdownMenuItem className="text-xl">
+					<DropdownMenuItem className="text-lg">
 						<Collapsible onOpenChange={setIsCollapsibleOpen} open={isCollapsibleOpen}>
 							<CollapsibleTrigger onClick={handleCollapsibleTriggerClick} className="flex justify-between items-center">
 								<div>GALLERY</div>
@@ -73,7 +73,7 @@ const MyMobileNavbar = () => {
 					</DropdownMenuItem>
 					<Separator className="h-1" />
 
-					<DropdownMenuItem className="text-xl">
+					<DropdownMenuItem className="text-lg">
 						<Link href="/contact" onClick={handleLinkClick}>
 							CONTACT US
 						</Link>
