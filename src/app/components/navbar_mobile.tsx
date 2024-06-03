@@ -45,8 +45,8 @@ const MyMobileNavbar = () => {
 						<Link href="/admission" onClick={handleLinkClick}>
 							ADMISSION
 						</Link>
-					</DropdownMenuItem> */}
-					<Separator className="h-1" />
+					</DropdownMenuItem>
+					<Separator className="h-1" /> */}
 
 					{/* Gallery */}
 					<DropdownMenuItem className="text-xl">

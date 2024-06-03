@@ -16,7 +16,7 @@ export default function Contact() {
 						<Image src="/icons/location.svg" alt="Address Icon" width={20} height={0} className="md:hidden" />
 						<div className="md:text-xl font-semibold">Address</div>
 					</div>
-					<div className="text-lg max-md:text-sm">Walnut Academy, 175-176, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
+					<div className="text-lg max-md:text-sm">Walnut Academy, 175, Prajapati Vihar, Mansarovar, Jaipur, Rajasthan-302020</div>
 
 					<div className="flex gap-4 mt-5 max-md:mt-2">
 						<Image src="/icons/phone.svg" alt="Phone Icon" width={25} height={0} className="max-md:hidden" />

@@ -17,7 +17,7 @@ const MyNavigationMenu = () => {
 					<div className="text-right">
 						<div className="text-4xl max-md:text-2xl/5 max-md:font-semibold">Walnut Academy</div>
 						<div>Mansarovar, Jaipur</div>
-						<div className="text-xs/3 text-red-800 max-md:font-thin">
+						<div className="text-xs/3 text-red-800 max-md:font-extralight">
 							<div>Organized by Shri Sanjivani Shiksha Samiti</div>
 							<div>Affilated to R.B.S.E., Affilation No. RJJAI27726</div>
 						</div>
