@@ -5,6 +5,8 @@ import path from 'path';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 
+const eventNames = ['festivals', 'celebrations'];
+
 type Props = {
 	params: {
 		eventName: string;
@@ -46,7 +48,6 @@ function getFolderImages(eventName: string): FolderImages[] {
 }
 
 export default function EventPage({ params }: Props) {
-	const eventNames = ['competitions', 'festivals', 'celebrations'];
 	if (!eventNames.includes(params.eventName)) {
 		return notFound(); // Render the notFound component
 	}
@@ -79,7 +80,6 @@ export default function EventPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-	const eventNames = ['competitions', 'festivals', 'celebrations'];
 	return eventNames.map((eventName) => ({
 		eventName,
 	}));
