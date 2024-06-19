@@ -5,7 +5,7 @@ import path from 'path';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 
-const eventNames = ['festivals', 'celebrations'];
+const eventNames = ['festivals', 'celebrations', 'competitions'];
 
 type Props = {
 	params: {
