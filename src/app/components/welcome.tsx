@@ -1,6 +1,6 @@
-'use client';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+"use client";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 const WelcomeDesc = () => {
 	return (
@@ -9,37 +9,33 @@ const WelcomeDesc = () => {
 				{/* About Section */}
 				<Card className="md:w-3/6 border-blue-900 border-4 bg-[#FADFB3] max-md:mx-5">
 					<CardHeader className="pb-4">
-						<CardTitle className="text-4xl max-md:text-xl">Welcome to Walnut Academy</CardTitle>
-						<CardDescription className="md:text-lg/4 text-black">A Foundation For The Future</CardDescription>
+						<CardTitle className="text-4xl max-md:text-2xl">Welcome to Walnut Academy</CardTitle>
+						<CardDescription className="md:text-lg text-black">A Foundation For The Future</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<div className="text-justify font-medium max-md:text-sm">
-							Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we will nurture your child and provide them with a quality
-							education. At Walnut Academy, our firm belief about teaching is learning by playing, doing, and in an interactive way. Hence, we have designed our ambiance,
-							curriculum, activities, teaching aids, toys, and equipment in a fun-loving manner.
-						</div>
+						<div className="text-justify font-medium text-lg max-md:text-sm">Walnut Academy provides a child-friendly, safe, secure, caring, and stimulating environment. Here, we nurture your child and provide them with a quality education. At Walnut Academy, our firm belief about teaching is learning by playing, doing, and in an interactive way. Hence, we have designed our ambiance, curriculum, activities, teaching aids, toys, and equipment in a fun-loving manner.</div>
 					</CardContent>
 				</Card>
-
+				
 				{/* <Separator orientation="vertical" className="bg-red-500 w-0.5 h-auto max-md:hidden" /> */}
 
 				{/* Timings Section */}
 				<Card className="md:w-2/6 text-center border-blue-900 border-4 bg-[#FADFB3] max-md:mx-5">
 					<CardHeader>
-						<CardTitle className="md:text-3xl">Timings</CardTitle>
+						<CardTitle className="text-3xl max-md:text-xl">Timings</CardTitle>
 					</CardHeader>
-					<CardContent className="flex justify-between">
-						<div className="w-1/2">
-							<div className="font-semibold text-xl max-md:text-lg"> Office Hours </div>
-							<div className="md:text-lg">8:30 a.m. to 02:30 p.m.</div>
+					<CardContent className="flex justify-between max-md:flex-col max-md:gap-4">
+						<div className="w-1/2 max-md:w-full">
+							<div className="font-semibold text-xl max-md:text-lg">Office Hours</div>
+							<div className="md:text-lg max-md:text-sm">8:30 a.m. to 02:30 p.m.</div>
 						</div>
-						<Separator orientation="vertical" className="bg-blue-900 w-0.5 h-auto mx-2" />
-						<div className="w-1/2">
-							<div className="font-semibold text-xl max-md:text-lg"> Class Hours </div>
-							<div className="md:text-lg">8:30 a.m. to 01:30 p.m.</div>
+						<Separator orientation="vertical" className="bg-blue-900 w-0.5 h-auto mx-2 max-md:hidden" />
+						<div className="w-1/2 max-md:w-full">
+							<div className="font-semibold text-xl max-md:text-lg">Class Hours</div>
+							<div className="md:text-lg max-md:text-sm">8:30 a.m. to 01:30 p.m.</div>
 						</div>
 					</CardContent>
-					<CardFooter className="justify-center flex font-semibold md:text-lg">Note: Every second Saturday is a holiday for the students.</CardFooter>
+					<CardFooter className="justify-center flex font-semibold md:text-lg max-md:text-sm">Note: Every second Saturday is a holiday for the students.</CardFooter>
 				</Card>
 			</div>
 		</>
