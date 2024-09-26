@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
-import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import EventGallery from "./event_gallery"; // Import the new client component
 
 const eventNames = ["festivals", "celebrations", "competitions"];
 
@@ -70,19 +70,8 @@ export default function EventPage({ params }: Props) {
 	return (
 		<>
 			<Separator className="h-0.5 bg-black" />
-
-			{folderImages.map((folder, folderIndex) => (
-				<div key={folderIndex} className="my-3">
-					<div className="text-headingColor text-center font-bold text-3xl max-md:text-2xl">{folder.folderName}</div>
-					<div className="flex flex-wrap mx-auto gap-4 justify-center mt-2 max-md:gap-3">
-						{folder.images.map((image, imageIndex) => (
-							<div key={imageIndex} className="relative w-1/6 h-80 max-md:w-1/4 max-md:h-44">
-								<Image src={`/images/gallery/${eventName}/${folder.folderName}/${image}`} alt={`Image ${imageIndex} of ${folder.folderName}`} blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`} placeholder="blur" fill className="object-cover" />
-							</div>
-						))}
-					</div>
-				</div>
-			))}
+			{/* Pass folderImages to the client component */}
+			<EventGallery folderImages={folderImages} eventName={eventName} />
 		</>
 	);
 }
