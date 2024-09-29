@@ -15,11 +15,12 @@ type EventGalleryProps = {
 
 export default function EventGallery({ folderImages, eventName }: EventGalleryProps) {
 	const [loadedImages, setLoadedImages] = useState<FolderImages[]>([]);
-	const [imagesPerPage, setImagesPerPage] = useState(12); // Adjust this to control how many images load at once
+	const [imagesPerPage, setImagesPerPage] = useState(5); // Adjust this to control how many images load at once
 	const [currentPage, setCurrentPage] = useState(1);
 
 	useEffect(() => {
 		const loadImages = () => {
+            console.log(currentPage);
 			const newImages = folderImages.slice(0, currentPage * imagesPerPage);
 			setLoadedImages(newImages);
 		};
@@ -34,6 +35,7 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 		}
 	};
 
+	// This useEffect block is responsible for registering the handleScroll event listener when the component mounts and ensuring that the event listener is removed when the component unmounts. This is a standard practice to prevent memory leaks and unnecessary listeners.
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
