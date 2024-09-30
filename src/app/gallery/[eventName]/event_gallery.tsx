@@ -14,35 +14,30 @@ type EventGalleryProps = {
 };
 
 export default function EventGallery({ folderImages, eventName }: EventGalleryProps) {
+	// State to hold the currently loaded events
 	const [loadedImages, setLoadedImages] = useState<FolderImages[]>([]);
-	const [imagesPerPage, setImagesPerPage] = useState(5); // Adjust this to control how many images load at once
+	// How many events to load at once (set to 2 as required)
+	const [eventsPerPage] = useState(2);
 	const [currentPage, setCurrentPage] = useState(1);
 
+	// useEffect hook to load the initial set of events and any additional events when currentPage changes
 	useEffect(() => {
 		const loadImages = () => {
-            console.log(currentPage);
-			const newImages = folderImages.slice(0, currentPage * imagesPerPage);
-			setLoadedImages(newImages);
+			const newEvents = folderImages.slice(0, currentPage * eventsPerPage);
+			setLoadedImages(newEvents);
 		};
 
 		loadImages();
-	}, [currentPage, folderImages]);
+	}, [currentPage, folderImages, eventsPerPage]);
 
-	// Load more images when user scrolls to the bottom (infinite scroll)
-	const handleScroll = () => {
-		if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
-			setCurrentPage((prevPage) => prevPage + 1);
-		}
+	// Function to handle "Load More" button click
+	const handleLoadMore = () => {
+		setCurrentPage((prevPage) => prevPage + 1); // Increase the currentPage to load more events
 	};
-
-	// This useEffect block is responsible for registering the handleScroll event listener when the component mounts and ensuring that the event listener is removed when the component unmounts. This is a standard practice to prevent memory leaks and unnecessary listeners.
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
 
 	return (
 		<>
+			{/* Render loaded events */}
 			{loadedImages.map((folder, folderIndex) => (
 				<div key={folderIndex} className="my-3">
 					<div className="text-headingColor text-center font-bold text-3xl max-md:text-2xl">{folder.folderName}</div>
@@ -56,9 +51,10 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 				</div>
 			))}
 
-			{currentPage * imagesPerPage < folderImages.length && (
+			{/* "Load More" button only appears if there are more events to load */}
+			{currentPage * eventsPerPage < folderImages.length && (
 				<div className="text-center mt-4">
-					<button className="px-4 py-2 bg-blue-500 text-white rounded-md" onClick={() => setCurrentPage((prevPage) => prevPage + 1)}>
+					<button className="px-4 py-2 bg-blue-500 text-white rounded-md" onClick={handleLoadMore}>
 						Load More
 					</button>
 				</div>
