@@ -14,31 +14,29 @@ type EventGalleryProps = {
 };
 
 export default function EventGallery({ folderImages, eventName }: EventGalleryProps) {
-	// State to hold the currently loaded events
-	const [loadedImages, setLoadedImages] = useState<FolderImages[]>([]);
-	// How many events to load at once (set to 2 as required)
-	const [eventsPerPage] = useState(2);
+	const [loadedEvents, setLoadedEvents] = useState<FolderImages[]>([]);
+	const [eventsPerPage] = useState(2); // Number of events to load at a time
 	const [currentPage, setCurrentPage] = useState(1);
 
-	// useEffect hook to load the initial set of events and any additional events when currentPage changes
 	useEffect(() => {
-		const loadImages = () => {
+		// Function to load the current set of events based on the page number
+		const loadEvents = () => {
 			const newEvents = folderImages.slice(0, currentPage * eventsPerPage);
-			setLoadedImages(newEvents);
+			setLoadedEvents(newEvents);
 		};
 
-		loadImages();
+		loadEvents(); // Call the function to load the initial set of events
 	}, [currentPage, folderImages, eventsPerPage]);
 
 	// Function to handle "Load More" button click
 	const handleLoadMore = () => {
-		setCurrentPage((prevPage) => prevPage + 1); // Increase the currentPage to load more events
+		setCurrentPage((prevPage) => prevPage + 1); // Load next set of events
 	};
 
 	return (
 		<>
 			{/* Render loaded events */}
-			{loadedImages.map((folder, folderIndex) => (
+			{loadedEvents.map((folder, folderIndex) => (
 				<div key={folderIndex} className="my-3">
 					<div className="text-headingColor text-center font-bold text-3xl max-md:text-2xl">{folder.folderName}</div>
 					<div className="flex flex-wrap mx-auto gap-4 justify-center mt-2 max-md:gap-3">
