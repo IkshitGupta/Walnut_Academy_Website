@@ -1,6 +1,6 @@
 "use client"; // Mark this file as a client component
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 type FolderImages = {
@@ -17,15 +17,30 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 	const [loadedEvents, setLoadedEvents] = useState<FolderImages[]>([]);
 	const [eventsPerPage] = useState(2); // Number of events to load at a time
 	const [currentPage, setCurrentPage] = useState(1);
+	const abortControllerRef = useRef<AbortController | null>(null);
 
 	useEffect(() => {
 		// Function to load the current set of events based on the page number
 		const loadEvents = () => {
+			// Abort previous image loading if any
+			if (abortControllerRef.current) {
+				abortControllerRef.current.abort();
+			}
+
+			const controller = new AbortController();
+			abortControllerRef.current = controller;
+
 			const newEvents = folderImages.slice(0, currentPage * eventsPerPage);
 			setLoadedEvents(newEvents);
 		};
 
 		loadEvents(); // Call the function to load the initial set of events
+
+		return () => {
+			if (abortControllerRef.current) {
+				abortControllerRef.current.abort();
+			}
+		};
 	}, [currentPage, folderImages, eventsPerPage]);
 
 	// Function to handle "Load More" button click
@@ -42,7 +57,22 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 					<div className="flex flex-wrap mx-auto gap-4 justify-center mt-2 max-md:gap-3">
 						{folder.images.map((image, imageIndex) => (
 							<div key={imageIndex} className="relative w-1/6 h-80 max-md:w-1/4 max-md:h-44">
-								<Image src={`/images/gallery/${eventName}/${folder.folderName}/${image}`} alt={`Image ${imageIndex} of ${folder.folderName}`} blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`} placeholder="blur" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+								<Image
+									src={`/images/gallery/${eventName}/${folder.folderName}/${image}`}
+									alt={`Image ${imageIndex} of ${folder.folderName}`}
+									blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`}
+									placeholder="blur"
+									fill
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+									className="object-cover"
+									loading="lazy"
+									// Assign the abort controller signal to the image loading process
+									onLoadStart={(e) => {
+										if (abortControllerRef.current?.signal.aborted) {
+											e.currentTarget.src = ""; // Stop loading image
+										}
+									}}
+								/>
 							</div>
 						))}
 					</div>

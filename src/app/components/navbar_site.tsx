@@ -13,7 +13,7 @@ const MyNavigationMenu = () => {
 
 			{/* Logo Section */}
 			<div className="m-2 ml-5">
-				<Link href="/" aria-label="Homepage" className="flex md:space-x-2 items-center">
+				<Link href="/" aria-label="Homepage" className="flex md:space-x-2 items-center" prefetch={false}>
 					<Image src="/images/LOGO.jpg" alt="Website Logo" width={75} height={0} quality={100} priority className="aspect-square max-md:hidden" />
 					<Image src="/images/LOGO.jpg" alt="Website Logo" width={60} height={0} quality={100} priority className="aspect-square md:hidden" />
 					<div className="text-right">
@@ -30,7 +30,7 @@ const MyNavigationMenu = () => {
 			{/* Navigation Links */}
 			<NavigationMenuList className="text-lg p-3 text-navColor mr-10 font-medium max-md:hidden">
 				<NavigationMenuItem>
-					<Link href="/" legacyBehavior passHref>
+					<Link href="/" legacyBehavior passHref prefetch={false}>
 						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>HOME</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
@@ -41,17 +41,17 @@ const MyNavigationMenu = () => {
 					<NavigationMenuList className="group-hover/a:visible invisible absolute -left-5">
 						<div className="flex flex-col justify-start items-start mt-2 bg-[#FFFDD0]/80 pl-4 pr-2">
 							<div>
-								<Link href="/gallery/festivals" legacyBehavior passHref>
+								<Link href="/gallery/festivals" legacyBehavior passHref prefetch={false}>
 									<NavigationMenuLink className="hover:text-hoverLink">Festivals</NavigationMenuLink>
 								</Link>
 							</div>
 							<div>
-								<Link href="/gallery/celebrations" legacyBehavior passHref>
+								<Link href="/gallery/celebrations" legacyBehavior passHref prefetch={false}>
 									<NavigationMenuLink className="hover:text-hoverLink">Celebrations</NavigationMenuLink>
 								</Link>
 							</div>
 							<div>
-								<Link href="/gallery/competitions" legacyBehavior passHref>
+								<Link href="/gallery/competitions" legacyBehavior passHref prefetch={false}>
 									<NavigationMenuLink className="hover:text-hoverLink">Competitions</NavigationMenuLink>
 								</Link>
 							</div>
@@ -61,7 +61,7 @@ const MyNavigationMenu = () => {
 
 				{/* Contact Us */}
 				<NavigationMenuItem>
-					<Link href="/contact" legacyBehavior passHref>
+					<Link href="/contact" legacyBehavior passHref prefetch={false}>
 						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>CONTACT US</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>

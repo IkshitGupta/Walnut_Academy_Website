@@ -36,7 +36,7 @@ const MyMobileNavbar: React.FC = () => {
 				<DropdownMenuContent className="py-3 text-navColor font-medium opacity-90 transition duration-300">
 					{/* Home Link */}
 					<DropdownMenuItem className="text-lg hover:text-blue-500">
-						<Link href="/" onClick={handleLinkClick}>
+						<Link href="/" onClick={handleLinkClick} prefetch={false}>
 							HOME
 						</Link>
 					</DropdownMenuItem>
@@ -50,15 +50,15 @@ const MyMobileNavbar: React.FC = () => {
 								<Image src="/icons/down-arrow.svg" alt="Expand Gallery" width={25} height={25} />
 							</CollapsibleTrigger>
 							<CollapsibleContent className="flex flex-col text-[#333333] space-y-2">
-								<Link href="/gallery/festivals" onClick={handleLinkClick} className="hover:text-blue-500">
+								<Link href="/gallery/festivals" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
 									Festivals
 								</Link>
 								<Separator className="bg-navColor" />
-								<Link href="/gallery/celebrations" onClick={handleLinkClick} className="hover:text-blue-500">
+								<Link href="/gallery/celebrations" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
 									Celebrations
 								</Link>
 								<Separator className="bg-navColor" />
-								<Link href="/gallery/competitions" onClick={handleLinkClick} className="hover:text-blue-500">
+								<Link href="/gallery/competitions" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
 									Competitions
 								</Link>
 								<Separator className="bg-navColor" />
@@ -69,7 +69,7 @@ const MyMobileNavbar: React.FC = () => {
 
 					{/* Contact Us Link */}
 					<DropdownMenuItem className="text-lg hover:text-blue-500">
-						<Link href="/contact" onClick={handleLinkClick}>
+						<Link href="/contact" onClick={handleLinkClick} prefetch={false}>
 							CONTACT US
 						</Link>
 					</DropdownMenuItem>
