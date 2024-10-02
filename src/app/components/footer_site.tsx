@@ -2,53 +2,51 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FC } from "react";
+
 const MyFooter: FC = () => {
 	return (
-		<>
-			<div className="bg-blue-900 mt-10 text-white md:py-5 flex px-28 max-md:mt-5 flex-wrap max-md:px-10 gap-y-2 items-center justify-center gap-x-16">
-				<div className="flex-col flex justify-center items-center">
-					<div className="m-2.5 ml-5">
-						<Link href="/" className="flex gap-x-2 items-center max-md:gap-x-0.5" prefetch={false}>
-							<Image src="/images/LOGO-bg-1e3a8a.png" alt="Website Logo" width={70} height={0} quality={100} className="aspect-square max-md:hidden" />
-							<Image src="/images/LOGO-bg-1e3a8a.png" alt="Website Logo" width={40} height={0} quality={100} className="aspect-square md:hidden" />
-							<div className="max-md:text-center">
-								<div className="text-4xl font-semibold max-md:text-xl"> Walnut Academy </div>
-							</div>
-						</Link>
+		<footer className="bg-blue-900 mt-10 text-white py-8 flex flex-wrap items-center justify-center gap-y-5 gap-x-16 px-10 md:px-28">
+			{/* Logo and Address */}
+			<div className="flex flex-col items-center text-center">
+				<Link href="/" className="flex gap-x-2 items-center" prefetch={false}>
+					<Image src="/images/LOGO-bg-1e3a8a.png" alt="Website Logo" width={70} height={70} quality={100} className="max-md:hidden" />
+					<Image src="/images/LOGO-bg-1e3a8a.png" alt="Website Logo" width={50} height={50} quality={100} className="md:hidden" />
+					<div>
+						<h2 className="text-4xl font-semibold max-md:text-xl text-[#ffa500]">Walnut Academy</h2>
 					</div>
+				</Link>
+				<p className="mt-2 text-lg md:text-xl max-md:text-sm">175, Prajapati Vihar, Patrakar Colony Road, Mansarovar, Jaipur, Rajasthan-302020</p>
+			</div>
 
-					<div className="md:text-xl text-center max-md:text-sm">175, Prajapati Vihar, Patrakar Colony Road, Mansarovar, Jaipur, Rajasthan-302020</div>
-				</div>
-
-				<div className="max-md:text-center">
-					<div className="md:text-xl pb-3 max-md:pb-0.5 text-[#ffa500] font-semibold">GET IN TOUCH</div>
-					<div className="flex gap-x-1 items-center md:text-lg max-md:justify-center">
-						<Image src="/icons/phone-white.svg" alt="Phone Icon" width={25} height={0} className="max-md:hidden" />
-						<Image src="/icons/phone-white.svg" alt="Phone Icon" width={20} height={0} className="md:hidden" />
-						<div>+91 9694853435</div>
+			{/* Contact Details */}
+			<div className="text-center">
+				<h3 className="md:text-2xl text-xl font-semibold text-[#ffa500]">Get in Touch</h3>
+				<div className="flex flex-col items-center mt-3">
+					<div className="flex items-center gap-x-2 md:text-lg max-md:text-sm">
+						<Image src="/icons/phone-white.svg" alt="Phone Icon" width={25} height={25} />
+						<span>+91 9694853435</span>
 					</div>
-					<div className="flex gap-x-2 items-center md:text-lg mb-3 max-md:mb-0.5 max-md:justify-center">
-						<Image src="/icons/mail-white.svg" alt="Mail Icon" width={25} height={0} className="max-md:hidden" />
-						<Image src="/icons/mail-white.svg" alt="Mail Icon" width={20} height={0} className="md:hidden" />
-						<div>walnutacademy2017@gmail.com</div>
-					</div>
-					{/* <Link href="/contact" className="md:text-lg text-[#ffa500] font-bold" prefetch={false}>
-						CONTACT US
-					</Link> */}
-					<div className="md:text-xl pb-3 max-md:pb-0.5 mt-3 max-md:mt-0.5 text-[#ffa500] font-semibold">STAY CONNECTED</div>
-					<div className="flex space-x-2 max-md:justify-center">
-						<Link href="https://www.facebook.com/profile.php?id=100057252888320" rel="noopener noreferrer" target="_blank" prefetch={false}>
-							<Image src="/icons/facebook.svg" alt="Visit Walnut Academy on Facebook" width={35} height={0} className="max-md:hidden" />
-							<Image src="/icons/facebook.svg" alt="Visit Walnut Academy on Facebook" width={30} height={0} className="md:hidden" />
-						</Link>
-						<Link href="https://www.youtube.com/@walnutacademy2017" rel="noopener noreferrer" target="_blank" prefetch={false}>
-							<Image src="/icons/youtube.svg" alt="Visit Walnut Academy on YouTube" width={35} height={0} className="max-md:hidden" />
-							<Image src="/icons/youtube.svg" alt="Visit Walnut Academy on YouTube" width={30} height={0} className="md:hidden" />
-						</Link>
+					<div className="flex items-center gap-x-2 md:text-lg max-md:text-sm mt-2">
+						<Image src="/icons/mail-white.svg" alt="Mail Icon" width={25} height={25} />
+						<span>walnutacademy2017@gmail.com</span>
 					</div>
 				</div>
 			</div>
-		</>
+
+			{/* Social Media Links */}
+			<div className="text-center">
+				<h3 className="md:text-2xl text-xl font-semibold text-[#ffa500]">Stay Connected</h3>
+				<div className="flex items-center justify-center space-x-4 mt-3">
+					<Link href="https://www.facebook.com/profile.php?id=100057252888320" rel="noopener noreferrer" target="_blank" prefetch={false}>
+						<Image src="/icons/facebook.svg" alt="Visit Walnut Academy on Facebook" width={40} height={40} className="hover:scale-110 transition-transform duration-300" />
+					</Link>
+					<Link href="https://www.youtube.com/@walnutacademy2017" rel="noopener noreferrer" target="_blank" prefetch={false}>
+						<Image src="/icons/youtube.svg" alt="Visit Walnut Academy on YouTube" width={40} height={40} className="hover:scale-110 transition-transform duration-300" />
+					</Link>
+				</div>
+			</div>
+		</footer>
 	);
 };
+
 export default MyFooter;
