@@ -16,31 +16,24 @@ const RoomGallery = () => {
 
 			<div className="mt-5 w-4/5 mx-auto max-md:w-4/6">
 				<Carousel
-					className="md:ml-10"
+					className="relative"
 					opts={{
 						align: "start",
 						loop: true,
 					}}>
-					<CarouselContent className="-ml-10">
+					<CarouselContent className="flex -ml-10 max-md:-ml-4">
 						{images.map((image, index) => (
-							<CarouselItem className="basis-1/3 pl-10 max-md:basis-1/2" key={index + 1}>
-								<AspectRatio ratio={1 / 1} className="border-blue-900 border-4">
-									<Image
-										src={image.large}
-										alt={`Room ${index + 1} - A snapshot of one of the rooms at Walnut Academy`}
-										blurDataURL={image.small} // Use small image for placeholder blur
-										placeholder="blur"
-										fill
-										sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-										loading="lazy"
-										className="object-cover"
-									/>
+							<CarouselItem className="basis-1/3 pl-10 max-md:basis-1/2 max-md:pl-4" key={index + 1}>
+								<AspectRatio ratio={1 / 1} className="border-blue-900 border-4 rounded-lg">
+									<Image src={image.large} alt={`Room ${index + 1} - A snapshot of one of the rooms at Walnut Academy`} blurDataURL={image.small} placeholder="blur" fill sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw" loading="lazy" className="object-cover rounded-lg" />
 								</AspectRatio>
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					<CarouselPrevious />
-					<CarouselNext />
+
+					{/* Carousel Navigation Buttons */}
+					<CarouselPrevious className="transform -translate-y-1/2 bg-blue-700 text-white p-2 rounded-full hover:bg-blue-400 transition-colors" aria-label="Previous Slide" />
+					<CarouselNext className="transform -translate-y-1/2 bg-blue-700 text-white p-2 rounded-full hover:bg-blue-400 transition-colors" aria-label="Next Slide" />
 				</Carousel>
 			</div>
 		</>
