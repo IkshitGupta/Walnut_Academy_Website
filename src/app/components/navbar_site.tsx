@@ -5,30 +5,33 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, Navigat
 import MobileNavbar from "./navbar_mobile";
 
 const MyNavigationMenu = () => {
-	const hoverBorder = "hover:border-2 hover:border-hoverLink px-4 py-0";
+	// Reusable hover style with animation
+	const hoverBorder = "hover:border-b-2 hover:border-hoverLink px-4 py-2 transition duration-300 ease-in-out";
+
 	return (
-		<NavigationMenu className="max-w-full justify-between">
+		<NavigationMenu className="max-w-full justify-between items-center shadow-lg">
 			{/* Mobile Navbar */}
 			<MobileNavbar />
 
 			{/* Logo Section */}
 			<div className="m-2 ml-5">
-				<Link href="/" aria-label="Homepage" className="flex md:space-x-2 items-center" prefetch={false}>
-					<Image src="/images/LOGO.jpg" alt="Website Logo" width={75} height={0} quality={100} priority className="aspect-square max-md:hidden" />
-					<Image src="/images/LOGO.jpg" alt="Website Logo" width={60} height={0} quality={100} priority className="aspect-square md:hidden" />
-					<div className="text-right">
-						<div className="text-4xl max-md:text-2xl/5 max-md:font-semibold">Walnut Academy</div>
-						<div>Mansarovar, Jaipur</div>
-						<div className="text-xs/3 text-red-800 max-md:font-extralight">
-							<div>Organized by Shri Sanjivani Shiksha Samiti</div>
-							<div>Affiliated to R.B.S.E., Affiliation No. RJJAI27726</div>
-						</div>
+				<Link href="/" aria-label="Homepage" className="flex items-center space-x-3" prefetch={false}>
+					<Image src="/images/LOGO.jpg" alt="Website Logo" width={75} height={75} quality={100} priority className="aspect-square max-md:hidden" />
+					<Image src="/images/LOGO.jpg" alt="Website Logo" width={60} height={60} quality={100} priority className="aspect-square md:hidden" />
+					<div className="ml-3">
+						<h1 className="text-3xl md:text-4xl font-semibold max-md:text-2xl">Walnut Academy</h1>
+						<p className="text-sm md:text-base">Mansarovar, Jaipur</p>
+						<p className="text-xs md:text-sm text-red-800">
+							<span>Organized by Shri Sanjivani Shiksha Samiti</span>
+							<br />
+							<span>Affiliated to R.B.S.E., Affiliation No. RJJAI27726</span>
+						</p>
 					</div>
 				</Link>
 			</div>
 
 			{/* Navigation Links */}
-			<NavigationMenuList className="text-lg p-3 text-navColor mr-10 font-medium max-md:hidden">
+			<NavigationMenuList className="text-lg space-x-6 text-navColor mr-10 font-medium max-md:hidden">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref prefetch={false}>
 						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>HOME</NavigationMenuLink>
@@ -36,25 +39,19 @@ const MyNavigationMenu = () => {
 				</NavigationMenuItem>
 
 				{/* Gallery Dropdown */}
-				<NavigationMenuItem className={`relative group/a ${hoverBorder}`}>
-					<NavigationMenuTrigger>GALLERY</NavigationMenuTrigger>
-					<NavigationMenuList className="group-hover/a:visible invisible absolute -left-5">
-						<div className="flex flex-col justify-start items-start mt-2 bg-[#FFFDD0]/80 pl-4 pr-2">
-							<div>
-								<Link href="/gallery/festivals" legacyBehavior passHref prefetch={false}>
-									<NavigationMenuLink className="hover:text-hoverLink">Festivals</NavigationMenuLink>
-								</Link>
-							</div>
-							<div>
-								<Link href="/gallery/celebrations" legacyBehavior passHref prefetch={false}>
-									<NavigationMenuLink className="hover:text-hoverLink">Celebrations</NavigationMenuLink>
-								</Link>
-							</div>
-							<div>
-								<Link href="/gallery/competitions" legacyBehavior passHref prefetch={false}>
-									<NavigationMenuLink className="hover:text-hoverLink">Competitions</NavigationMenuLink>
-								</Link>
-							</div>
+				<NavigationMenuItem className="relative group">
+					<NavigationMenuTrigger className={`hover:text-hoverLink ${hoverBorder}`}>GALLERY</NavigationMenuTrigger>
+					<NavigationMenuList className="absolute z-20 rounded-md shadow-lg mt-2 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100">
+						<div className="flex flex-col bg-[#FFFDD0]/80 pl-4 pr-2">
+							<Link href="/gallery/festivals" legacyBehavior passHref prefetch={false}>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Festivals</NavigationMenuLink>
+							</Link>
+							<Link href="/gallery/celebrations" legacyBehavior passHref prefetch={false}>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Celebrations</NavigationMenuLink>
+							</Link>
+							<Link href="/gallery/competitions" legacyBehavior passHref prefetch={false}>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Competitions</NavigationMenuLink>
+							</Link>
 						</div>
 					</NavigationMenuList>
 				</NavigationMenuItem>
