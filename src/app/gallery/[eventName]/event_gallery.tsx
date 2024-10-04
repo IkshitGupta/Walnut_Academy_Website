@@ -17,18 +17,21 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 	const [loadedEvents, setLoadedEvents] = useState<FolderImages[]>([]);
 	const [eventsPerPage] = useState(2); // Number of events to load at a time
 	const [currentPage, setCurrentPage] = useState(1);
+	// Reference to abort any ongoing image loading
 	const abortControllerRef = useRef<AbortController | null>(null);
 
 	useEffect(() => {
 		// Function to load the current set of events based on the page number
 		const loadEvents = () => {
-			// Abort previous image loading if any
+			// Abort previous image loading if any (Commented for now)
+			/*
 			if (abortControllerRef.current) {
 				abortControllerRef.current.abort();
 			}
 
 			const controller = new AbortController();
 			abortControllerRef.current = controller;
+			*/
 
 			const newEvents = folderImages.slice(0, currentPage * eventsPerPage);
 			setLoadedEvents(newEvents);
@@ -37,9 +40,12 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 		loadEvents(); // Call the function to load the initial set of events
 
 		return () => {
+			// Abort image loading on component unmount (Commented for now)
+			/*
 			if (abortControllerRef.current) {
 				abortControllerRef.current.abort();
 			}
+			*/
 		};
 	}, [currentPage, folderImages, eventsPerPage]);
 
@@ -66,12 +72,14 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 									className="object-cover"
 									loading="lazy"
-									// Assign the abort controller signal to the image loading process
+									// If needed, abort the image loading (Commented for now)
+									/*
 									onLoadStart={(e) => {
 										if (abortControllerRef.current?.signal.aborted) {
 											e.currentTarget.src = ""; // Stop loading image
 										}
 									}}
+									*/
 								/>
 							</div>
 						))}
@@ -82,7 +90,7 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 			{/* "Load More" button only appears if there are more events to load */}
 			{currentPage * eventsPerPage < folderImages.length && (
 				<div className="text-center mt-4">
-					<button className="px-4 py-2 bg-blue-500 text-white rounded-md" onClick={handleLoadMore}>
+					<button className="px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300" onClick={handleLoadMore}>
 						Load More
 					</button>
 				</div>
