@@ -1,4 +1,3 @@
-"use client";
 import CustomNavbar from "./components/navbar_site";
 import CustomHeader from "./components/header_site";
 import CustomFooter from "./components/footer_site";
