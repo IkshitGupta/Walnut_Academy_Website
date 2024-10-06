@@ -19,7 +19,7 @@ export default function Contact() {
 
 	return (
 		<>
-			<Separator className="h-0.5 bg-gray-300" />
+			<Separator className="h-0.5 bg-black" />
 
 			<div className="flex flex-col items-center mx-auto mt-10 gap-y-10 max-md:ml-5 max-md:mt-5 px-5">
 				{/* Heading */}

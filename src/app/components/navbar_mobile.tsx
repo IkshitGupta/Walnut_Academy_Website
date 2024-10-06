@@ -33,47 +33,44 @@ const MyMobileNavbar: React.FC = () => {
 				<DropdownMenuTrigger aria-expanded={isDropdownOpen} aria-label="Open menu">
 					<Image src="/icons/menu.svg" alt="Menu Icon" width={35} height={35} />
 				</DropdownMenuTrigger>
-				<DropdownMenuContent className="py-3 text-navColor font-medium opacity-90 transition duration-300">
+
+				<DropdownMenuContent className="py-3 px-4 rounded-md shadow-lg text-navColor font-medium opacity-90 transition duration-300 space-y-2">
 					{/* Home Link */}
-					<DropdownMenuItem className="text-lg hover:text-blue-500">
+					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors">
 						<Link href="/" onClick={handleLinkClick} prefetch={false}>
 							HOME
 						</Link>
 					</DropdownMenuItem>
-					<Separator className="h-1" />
+					<Separator className="bg-gray-300 h-0.5" />
 
 					{/* Gallery Section */}
-					<DropdownMenuItem className="text-lg hover:text-blue-500">
+					<DropdownMenuItem className="text-lg">
 						<Collapsible open={isCollapsibleOpen} onOpenChange={setIsCollapsibleOpen}>
-							<CollapsibleTrigger onClick={handleCollapsibleTriggerClick} className="flex justify-between items-center" aria-expanded={isCollapsibleOpen}>
-								<div>GALLERY</div>
-								<Image src="/icons/down-arrow.svg" alt="Expand Gallery" width={25} height={25} />
+							<CollapsibleTrigger onClick={handleCollapsibleTriggerClick} className="flex justify-between items-center py-2 transition-colors hover:text-blue-500">
+								<span>GALLERY</span>
+								<Image src="/icons/down-arrow.svg" alt="Expand Gallery" width={20} height={20} />
 							</CollapsibleTrigger>
-							<CollapsibleContent className="flex flex-col text-[#333333] space-y-2">
-								<Link href="/gallery/festivals" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
+							<CollapsibleContent className="flex flex-col text-[#333333] space-y-2 pl-4">
+								<Link href="/gallery/festivals" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors" prefetch={false}>
 									Festivals
 								</Link>
-								<Separator className="bg-navColor" />
-								<Link href="/gallery/celebrations" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
+								<Link href="/gallery/celebrations" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors" prefetch={false}>
 									Celebrations
 								</Link>
-								<Separator className="bg-navColor" />
-								<Link href="/gallery/competitions" onClick={handleLinkClick} className="hover:text-blue-500" prefetch={false}>
+								<Link href="/gallery/competitions" onClick={handleLinkClick} className="hover:text-blue-500 transition-colors" prefetch={false}>
 									Competitions
 								</Link>
-								<Separator className="bg-navColor" />
 							</CollapsibleContent>
 						</Collapsible>
 					</DropdownMenuItem>
-					<Separator className="h-1" />
+					<Separator className="bg-gray-300 h-0.5" />
 
 					{/* Contact Us Link */}
-					<DropdownMenuItem className="text-lg hover:text-blue-500">
+					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors">
 						<Link href="/contact" onClick={handleLinkClick} prefetch={false}>
 							CONTACT US
 						</Link>
 					</DropdownMenuItem>
-					<Separator className="h-1" />
 				</DropdownMenuContent>
 			</DropdownMenu>
 		</div>
