@@ -30,13 +30,13 @@ const MyMobileNavbar: React.FC = () => {
 	return (
 		<div className="md:hidden">
 			<DropdownMenu open={isDropdownOpen} onOpenChange={handleDropdownChange}>
-				<DropdownMenuTrigger aria-expanded={isDropdownOpen} aria-label="Open menu">
+				<DropdownMenuTrigger aria-expanded={isDropdownOpen} aria-label="Open menu" aria-haspopup="true">
 					<Image src="/icons/menu.svg" alt="Menu Icon" width={35} height={35} />
 				</DropdownMenuTrigger>
 
-				<DropdownMenuContent className="py-3 px-4 rounded-md shadow-lg text-navColor font-medium opacity-90 transition duration-300 space-y-2">
+				<DropdownMenuContent className="py-3 px-4 rounded-md shadow-lg text-navColor font-medium opacity-90 transition duration-300 space-y-2" role="menu">
 					{/* Home Link */}
-					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors">
+					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors" role="menuitem">
 						<Link href="/" onClick={handleLinkClick} prefetch={false}>
 							HOME
 						</Link>
@@ -46,7 +46,7 @@ const MyMobileNavbar: React.FC = () => {
 					{/* Gallery Section */}
 					<DropdownMenuItem className="text-lg">
 						<Collapsible open={isCollapsibleOpen} onOpenChange={setIsCollapsibleOpen}>
-							<CollapsibleTrigger onClick={handleCollapsibleTriggerClick} className="flex justify-between items-center py-2 transition-colors hover:text-blue-500">
+							<CollapsibleTrigger onClick={handleCollapsibleTriggerClick} className="flex justify-between items-center py-2 transition-colors hover:text-blue-500" aria-expanded={isCollapsibleOpen}>
 								<span>GALLERY</span>
 								<Image src="/icons/down-arrow.svg" alt="Expand Gallery" width={20} height={20} />
 							</CollapsibleTrigger>
@@ -66,7 +66,7 @@ const MyMobileNavbar: React.FC = () => {
 					<Separator className="bg-gray-300 h-0.5" />
 
 					{/* Contact Us Link */}
-					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors">
+					<DropdownMenuItem className="text-lg hover:text-blue-500 transition-colors" role="menuitem">
 						<Link href="/contact" onClick={handleLinkClick} prefetch={false}>
 							CONTACT US
 						</Link>

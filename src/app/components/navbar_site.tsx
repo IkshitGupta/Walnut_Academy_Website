@@ -9,7 +9,7 @@ const MyNavigationMenu = () => {
 	const hoverBorder = "hover:border-b-2 hover:border-hoverLink px-4 py-2 transition duration-300 ease-in-out";
 
 	return (
-		<NavigationMenu className="max-w-full justify-between items-center shadow-lg">
+		<NavigationMenu className="max-w-full justify-between items-center shadow-lg" role="navigation">
 			{/* Mobile Navbar */}
 			<MobileNavbar />
 
@@ -34,23 +34,33 @@ const MyNavigationMenu = () => {
 			<NavigationMenuList className="text-lg space-x-6 text-navColor mr-10 font-medium max-md:hidden">
 				<NavigationMenuItem>
 					<Link href="/" legacyBehavior passHref prefetch={false}>
-						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>HOME</NavigationMenuLink>
+						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`} role="menuitem">
+							HOME
+						</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 
 				{/* Gallery Dropdown */}
 				<NavigationMenuItem className="relative group">
-					<NavigationMenuTrigger className={`hover:text-hoverLink ${hoverBorder}`}>GALLERY</NavigationMenuTrigger>
-					<NavigationMenuList className="absolute z-20 rounded-md shadow-lg mt-2 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100">
+					<NavigationMenuTrigger className={`hover:text-hoverLink ${hoverBorder}`} aria-haspopup="true" aria-expanded="false">
+						GALLERY
+					</NavigationMenuTrigger>
+					<NavigationMenuList className="absolute z-20 rounded-md shadow-lg mt-2 py-2 transition-all duration-200 opacity-0 group-hover:opacity-100" role="menu">
 						<div className="flex flex-col bg-[#FFFDD0]/80 pl-4 pr-2">
 							<Link href="/gallery/festivals" legacyBehavior passHref prefetch={false}>
-								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Festivals</NavigationMenuLink>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200" role="menuitem">
+									Festivals
+								</NavigationMenuLink>
 							</Link>
 							<Link href="/gallery/celebrations" legacyBehavior passHref prefetch={false}>
-								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Celebrations</NavigationMenuLink>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200" role="menuitem">
+									Celebrations
+								</NavigationMenuLink>
 							</Link>
 							<Link href="/gallery/competitions" legacyBehavior passHref prefetch={false}>
-								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200">Competitions</NavigationMenuLink>
+								<NavigationMenuLink className="py-2 hover:text-hoverLink transition-colors duration-200" role="menuitem">
+									Competitions
+								</NavigationMenuLink>
 							</Link>
 						</div>
 					</NavigationMenuList>
@@ -59,7 +69,9 @@ const MyNavigationMenu = () => {
 				{/* Contact Us */}
 				<NavigationMenuItem>
 					<Link href="/contact" legacyBehavior passHref prefetch={false}>
-						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`}>CONTACT US</NavigationMenuLink>
+						<NavigationMenuLink className={`hover:text-hoverLink ${hoverBorder}`} role="menuitem">
+							CONTACT US
+						</NavigationMenuLink>
 					</Link>
 				</NavigationMenuItem>
 			</NavigationMenuList>
