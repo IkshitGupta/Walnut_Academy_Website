@@ -14,7 +14,6 @@ type EventGalleryProps = {
 	eventName: string;
 };
 
-// ImageModal component for displaying enlarged images
 const ImageModal = ({ imageSrc, onClose }: { imageSrc: string; onClose: () => void }) => {
 	return (
 		<div
@@ -73,8 +72,8 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 					<div className="text-headingColor text-center font-bold text-3xl max-md:text-2xl">{folder.folderName}</div>
 					<div className="flex flex-wrap mx-auto gap-4 justify-center mt-2 max-md:gap-3">
 						{folder.images.map((image, imageIndex) => (
-							<div key={imageIndex} className="relative w-1/6 h-80 max-md:w-1/4 max-md:h-44">
-								<Image src={`/images/gallery/${eventName}/${folder.folderName}/${image}`} alt={`Image ${imageIndex} of ${folder.folderName}`} blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`} placeholder="blur" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover cursor-pointer rounded-lg" loading="lazy" onClick={() => openModal(`/images/gallery/${eventName}/${folder.folderName}/${image}`)} />
+							<div key={imageIndex} className="relative w-1/6 h-80 max-md:w-1/4 max-md:h-44 animate-fade-in">
+								<Image src={`/images/gallery/${eventName}/${folder.folderName}/${image}`} alt={`Image ${imageIndex} of ${folder.folderName}`} blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`} placeholder="blur" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover cursor-pointer rounded-lg transition-transform duration-300 hover:scale-105" loading="lazy" onClick={() => openModal(`/images/gallery/${eventName}/${folder.folderName}/${image}`)} />
 							</div>
 						))}
 					</div>
@@ -84,7 +83,7 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 			{/* "Load More" button only appears if there are more events to load */}
 			{currentPage * eventsPerPage < folderImages.length && (
 				<div className="text-center mt-4">
-					<button className="px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300" onClick={handleLoadMore}>
+					<button className="px-6 py-3 bg-blue-600 text-white rounded-md shadow-lg hover:bg-blue-700 hover:scale-105 transition-transform duration-300" onClick={handleLoadMore}>
 						Load More
 					</button>
 				</div>
