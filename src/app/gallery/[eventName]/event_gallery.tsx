@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
+// Define types for folder images and props
 type FolderImages = {
 	folderName: string;
 	images: string[];
@@ -13,45 +14,55 @@ type EventGalleryProps = {
 	eventName: string;
 };
 
+// ImageModal component for displaying enlarged images
+const ImageModal = ({ imageSrc, onClose }: { imageSrc: string; onClose: () => void }) => {
+	return (
+		<div
+			className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
+			onClick={onClose} // Close modal on overlay click
+		>
+			<div className="relative" onClick={(e) => e.stopPropagation()}>
+				<button onClick={onClose} className="absolute top-4 right-4 text-white text-2xl">
+					✖️
+				</button>
+				<Image src={imageSrc} alt="Enlarged view" width={800} height={600} className="object-contain" />
+			</div>
+		</div>
+	);
+};
+
 export default function EventGallery({ folderImages, eventName }: EventGalleryProps) {
 	const [loadedEvents, setLoadedEvents] = useState<FolderImages[]>([]);
 	const [eventsPerPage] = useState(2); // Number of events to load at a time
 	const [currentPage, setCurrentPage] = useState(1);
-	// Reference to abort any ongoing image loading
-	const abortControllerRef = useRef<AbortController | null>(null);
+	const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+	const [selectedImage, setSelectedImage] = useState<string | null>(null); // State for the currently selected image
 
 	useEffect(() => {
-		// Function to load the current set of events based on the page number
 		const loadEvents = () => {
-			// Abort previous image loading if any (Commented for now)
-			/*
-			if (abortControllerRef.current) {
-				abortControllerRef.current.abort();
-			}
-
-			const controller = new AbortController();
-			abortControllerRef.current = controller;
-			*/
-
 			const newEvents = folderImages.slice(0, currentPage * eventsPerPage);
 			setLoadedEvents(newEvents);
 		};
 
-		loadEvents(); // Call the function to load the initial set of events
+		loadEvents();
 
-		return () => {
-			// Abort image loading on component unmount (Commented for now)
-			/*
-			if (abortControllerRef.current) {
-				abortControllerRef.current.abort();
-			}
-			*/
-		};
+		return () => {};
 	}, [currentPage, folderImages, eventsPerPage]);
 
-	// Function to handle "Load More" button click
 	const handleLoadMore = () => {
 		setCurrentPage((prevPage) => prevPage + 1); // Load next set of events
+	};
+
+	// Function to open the modal with the selected image
+	const openModal = (image: string) => {
+		setSelectedImage(image);
+		setIsModalOpen(true);
+	};
+
+	// Function to close the modal
+	const closeModal = () => {
+		setIsModalOpen(false);
+		setSelectedImage(null);
 	};
 
 	return (
@@ -63,24 +74,7 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 					<div className="flex flex-wrap mx-auto gap-4 justify-center mt-2 max-md:gap-3">
 						{folder.images.map((image, imageIndex) => (
 							<div key={imageIndex} className="relative w-1/6 h-80 max-md:w-1/4 max-md:h-44">
-								<Image
-									src={`/images/gallery/${eventName}/${folder.folderName}/${image}`}
-									alt={`Image ${imageIndex} of ${folder.folderName}`}
-									blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`}
-									placeholder="blur"
-									fill
-									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-									className="object-cover"
-									loading="lazy"
-									// If needed, abort the image loading (Commented for now)
-									/*
-									onLoadStart={(e) => {
-										if (abortControllerRef.current?.signal.aborted) {
-											e.currentTarget.src = ""; // Stop loading image
-										}
-									}}
-									*/
-								/>
+								<Image src={`/images/gallery/${eventName}/${folder.folderName}/${image}`} alt={`Image ${imageIndex} of ${folder.folderName}`} blurDataURL={`/images/gallery/${eventName}/${folder.folderName}/small/${image}`} placeholder="blur" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover cursor-pointer rounded-lg" loading="lazy" onClick={() => openModal(`/images/gallery/${eventName}/${folder.folderName}/${image}`)} />
 							</div>
 						))}
 					</div>
@@ -95,6 +89,9 @@ export default function EventGallery({ folderImages, eventName }: EventGalleryPr
 					</button>
 				</div>
 			)}
+
+			{/* Render the ImageModal if open */}
+			{isModalOpen && selectedImage && <ImageModal imageSrc={selectedImage} onClose={closeModal} />}
 		</>
 	);
 }
